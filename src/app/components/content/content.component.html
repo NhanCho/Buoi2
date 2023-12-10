@@ -1,0 +1,13 @@
+@for (product of products; track product.id) {
+	<div>
+	  {{ $index + 1 }} - {{ product.name }}
+	  {{ $first ? "- Best choice" : "" }}
+	</div>
+    <button (click)="handleClearId(product.id)">Clear</button>
+}@empty {
+	<div>No products found</div>
+}
+
+<div>
+    <button (click)="handleClearAll()">Clear all</button>
+</div>
